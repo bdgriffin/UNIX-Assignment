@@ -3,13 +3,22 @@
 ##Data Inspection 
 ###Attributes of fang_et_al_genotypes.txt
 
+
+```
 $ wc fang_et_al_genotypes.txt
+```
 2783  2744038 11051939 fang_et_al_genotypes.txt
+```
 $ wc -l fang_et_al_genotypes.txt
+```
 2783 fang_et_al_genotypes.txt
+```
 $ du -h fang_et_al_genotypes.txt
+```
 6.1M	fang_et_al_genotypes.txt
+```
 $ tail -n +6 fang_et_al_genotypes.txt | awk -F "\t" '{print NF; exit}'
+```
 986
 
 #By inspecting the files I learned:
@@ -21,24 +30,33 @@ $ tail -n +6 fang_et_al_genotypes.txt | awk -F "\t" '{print NF; exit}'
 
 ###Attributes of snp_position.txt
 
+```
 $ wc snp_position.txt
+```
 984 13198 82763 snp_position.txt
+```
 $ wc -l snp_position.txt
+```
 984 snp_position.txt 
+```
 $ du -h snp_position.txt
+```
 38K	snp_position.txt
+```
 $ tail -n +6 snp_position.txt | awk -F "\t" '{print NF; exit}'
+```
 15
 
-#By inspecting the files I learned:
-#1. There is 984 lines 
-#2. There is 13198 words and 82796 bytes or characters. 
-#3. The file is 38K
-#4. There are 15 columns. 
+By inspecting the files I learned:
+ 1. There is 984 lines 
+ 2. There is 13198 words and 82796 bytes or characters. 
+ 3. The file is 38K
+ 4. There are 15 columns. 
 
 ##Data Processing 
 ###Maize Data 
 
+```
 #copied the og file as not to mess it up (I'm new to this)
 $ cp fang_et_al_genotypes.txt fang.txt
 
@@ -110,67 +128,76 @@ $ grep -E "\?" joinedmaize.txt > snps_unknown.txt
 #did the same for teosinte
 $ grep -E "\?" joinedteosinte.txt > snps_unknown_teosinte.txt
 
-#could not figure out how to do the '1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)'
-#i tried many different methods and was focused on trying to pull out the unique SNP IDs (I defined unique as what was after the period on the ID)
-#in the end I could not fugure that one out
+```
 
+```
+#I could not figure out how to do the '1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)'
+I tried many different methods and was focused on trying to pull out the unique SNP IDs (I defined unique as what was after the period on the ID)
+#in the end I could not fugure that one out
+```
 
 ###END RESULT FILE NAMES 
 
-#For maize (Group = ZMMIL, ZMMLR, and ZMMMR in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
-#10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
+For maize (Group = ZMMIL, ZMMLR, and ZMMMR in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
+ 10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
 #BDG File Names for maize
-#maizechr1.txt
-#maizechr2.txt
-#maizechr3.txt
-#maizechr4.txt
-#maizechr5.txt
-#maizechr6.txt
-#maizechr7.txt
-#maizechr8.txt
-#maizechr9.txt
-#maizechr10.txt
-#10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
-#maizechr1rev.txt
-#maizechr2rev.txt
-#maizechr3rev.txt
-#maizechr4rev.txt
-#maizechr5rev.txt
-#maizechr6rev.txt
-#maizechr7rev.txt
-#maizechr8rev.txt
-#maizechr9rev.txt
-#maizechr10rev.txt
-#1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
-#snps_unknown.txt
-#1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
+ maizechr1.txt
+ maizechr2.txt
+ maizechr3.txt
+ maizechr4.txt
+ maizechr5.txt
+ maizechr6.txt
+ maizechr7.txt
+ maizechr8.txt
+ maizechr9.txt
+ maizechr10.txt
+ 
+10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
+ maizechr1rev.txt
+ maizechr2rev.txt
+ maizechr3rev.txt
+ maizechr4rev.txt
+ maizechr5rev.txt
+ maizechr6rev.txt
+ maizechr7rev.txt
+ maizechr8rev.txt
+ maizechr9rev.txt
+ maizechr10rev.txt
+ 
+1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
+snps_unknown.txt
+
+1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
 #N/A
 
-#For teosinte (Group = ZMPBA, ZMPIL, and ZMPJA in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
-#10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
+For teosinte (Group = ZMPBA, ZMPIL, and ZMPJA in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
+10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
 #BDG File names for Teosinte:
-#teosintechr1.txt
-#teosintechr2.txt
-#teosintechr3.txt
-#teosintechr4.txt
-#teosintechr5.txt
-#teosintechr6.txt
-#teosintechr7.txt
-#teosintechr8.txt
-#teosintechr9.txt
-#teosintechr10.txt
-#10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
-#teosintechr1rev.txt
-#teosintechr2rev.txt
-#teosintechr3rev.txt
-#teosintechr4rev.txt
-#teosintechr5rev.txt
-#teosintechr6rev.txt
-#teosintechr7rev.txt
-#teosintechr8rev.txt
-#teosintechr9rev.txt
-#teosintechr10rev.txt
-#1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
-#snps_unknown_teosinte.txt
-#1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
-#N/A
+ teosintechr1.txt
+ teosintechr2.txt
+ teosintechr3.txt
+ teosintechr4.txt
+ teosintechr5.txt
+ teosintechr6.txt
+ teosintechr7.txt
+ teosintechr8.txt
+ teosintechr9.txt
+ teosintechr10.txt
+ 
+10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
+ teosintechr1rev.txt
+ teosintechr2rev.txt
+ teosintechr3rev.txt
+ teosintechr4rev.txt
+ teosintechr5rev.txt
+ teosintechr6rev.txt
+ teosintechr7rev.txt
+ teosintechr8rev.txt
+ teosintechr9rev.txt
+ teosintechr10rev.txt
+ 
+1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
+ snps_unknown_teosinte.txt
+ 
+1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
+ N/A
