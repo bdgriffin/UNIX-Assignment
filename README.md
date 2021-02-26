@@ -21,11 +21,11 @@ $ tail -n +6 fang_et_al_genotypes.txt | awk -F "\t" '{print NF; exit}'
 ```
 986
 
-#By inspecting the files I learned:
-#1. There is 2783 lines
-#2. There is 2744038 words and 11051939 bytes or characters
-#3. The file is 6.1M 
-#4. There are 986 columns 
+By inspecting the files I learned:
+ 1. There is 2783 lines
+ 2. There is 2744038 words and 11051939 bytes or characters
+ 3. The file is 6.1M 
+ 4. There are 986 columns 
 
 
 ###Attributes of snp_position.txt
