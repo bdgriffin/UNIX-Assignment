@@ -140,7 +140,9 @@ I tried many different methods and was focused on trying to pull out the unique 
 
 For maize (Group = ZMMIL, ZMMLR, and ZMMMR in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
  10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
+ 
 #BDG File Names for maize
+
  maizechr1.txt
  maizechr2.txt
  maizechr3.txt
@@ -153,6 +155,7 @@ For maize (Group = ZMMIL, ZMMLR, and ZMMMR in the third column of the fang_et_al
  maizechr10.txt
  
 10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
+
  maizechr1rev.txt
  maizechr2rev.txt
  maizechr3rev.txt
@@ -165,14 +168,18 @@ For maize (Group = ZMMIL, ZMMLR, and ZMMMR in the third column of the fang_et_al
  maizechr10rev.txt
  
 1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
+
 snps_unknown.txt
 
 1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
+
 #N/A
 
 For teosinte (Group = ZMPBA, ZMPIL, and ZMPJA in the third column of the fang_et_al_genotypes.txt file) we want 20 files in total:
 10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
+
 #BDG File names for Teosinte:
+
  teosintechr1.txt
  teosintechr2.txt
  teosintechr3.txt
@@ -185,6 +192,7 @@ For teosinte (Group = ZMPBA, ZMPIL, and ZMPJA in the third column of the fang_et
  teosintechr10.txt
  
 10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
+
  teosintechr1rev.txt
  teosintechr2rev.txt
  teosintechr3rev.txt
@@ -197,7 +205,9 @@ For teosinte (Group = ZMPBA, ZMPIL, and ZMPJA in the third column of the fang_et
  teosintechr10rev.txt
  
 1 file with all SNPs with unknown positions in the genome (these need not be ordered in any particular way)
+
  snps_unknown_teosinte.txt
  
 1 file with all SNPs with multiple positions in the genome (these need not be ordered in any particular way)
+
  N/A
